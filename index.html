@@ -387,7 +387,7 @@
             <input type="hidden" id="submit_message" value="" />
             <input type="hidden" name="retainParams" id="retainParams" value="{&quot;widgetType&quot;:&quot;popup&quot;}" />
 
-            <input class="btn" data-loading-text="Submitting.." id="helpdesk_ticket_submit" name="commit" type="submit" value="Send Feedback"
+            <input class="btn" data-loading-text="Submitting.." id="helpdesk_ticket_submit" name="commit" type="submit" value="SUBMIT"
             />
             <input id="meta_user_agent" name="meta[user_agent]" type="hidden" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
             />
@@ -711,7 +711,7 @@
                                                     }
                                                     jQuery("form").submit(function (e) {
                                                         if (jQuery('#helpdesk_ticket_subject').val() && jQuery('#helpdesk_ticket_e').val()) {
-                                                            alert("Thanks for giving us your feedback!")
+                                                            alert("Thanks for submitting!")
                                                             parent.postMessage("close", '*')
                                                         }
                                                     });
