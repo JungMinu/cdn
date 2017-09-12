@@ -107,11 +107,6 @@
     <script src="https://assets4.freshdesk.com/assets/cdn/i18n/en-1268c3ca53ab90e147caf063284c6021.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-        function getParameterByName(name) {
-            var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-            return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-        }
-        console.log(JSON.stringify(getParameterByName('queryString')))
         //<![CDATA[
 
         jQuery.extend(jQuery.validator.messages, validation_messages);
@@ -230,6 +225,12 @@
 
                                                 <script type="text/javascript" src="https://www.dropbox.com/static/api/1/dropbox.js"></script>
                                                 <script type="text/javascript">
+                                                    function getParameterByName(name) {
+                                                        var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+                                                        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+                                                    }
+                                                    var prefill_email = getParameterByName('queryString') ? getParameterByName('queryString').split('?')[0] : ''
+                                                    document.getElementById("helpdesk_ticket_e").value = prefill_email
                                                     function initDropbox(inp) {
                                                         Dropbox.choose({
                                                             success: function (files) {
